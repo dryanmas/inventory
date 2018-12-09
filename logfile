@@ -1,0 +1,619 @@
+2018-11-30 15:50:35.918 MST [1039] LOG:  listening on IPv6 address "::1", port 5432
+2018-11-30 15:50:35.918 MST [1039] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-11-30 15:50:35.928 MST [1039] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2018-11-30 15:50:35.986 MST [1040] LOG:  database system was shut down at 2018-11-30 15:50:11 MST
+2018-11-30 15:50:36.011 MST [1039] LOG:  database system is ready to accept connections
+2018-11-30 15:52:10.847 MST [1281] ERROR:  syntax error at or near ")" at character 82
+2018-11-30 15:52:10.847 MST [1281] STATEMENT:  CREATE TABLE category (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL,
+	);
+2018-11-30 15:52:10.848 MST [1281] ERROR:  syntax error at or near ")" at character 82
+2018-11-30 15:52:10.848 MST [1281] STATEMENT:  CREATE TABLE location (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL,
+	);
+2018-11-30 15:52:10.848 MST [1281] ERROR:  syntax error at or near "FOREIGN" at character 148
+2018-11-30 15:52:10.848 MST [1281] STATEMENT:  CREATE TABLE item (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL,
+	  unit VARCHAR NOT NULL,
+	  unit_price VARCHAR NOT NULL,
+	  category_id FOREIGN KEY (id)
+	    REFERENCES category (id),
+	  source VARCHAR
+	);
+2018-11-30 15:52:10.849 MST [1281] ERROR:  syntax error at or near "FOREIGN" at character 65
+2018-11-30 15:52:10.849 MST [1281] STATEMENT:  CREATE TABLE item_location (
+	  id serial PRIMARY KEY,
+	  item_id FOREIGN KEY (id)
+	    REFERENCES item (id),
+	  location_id FOREIGN KEY (id)
+	    REFERENCES location (id)
+	);
+2018-11-30 15:52:10.852 MST [1281] ERROR:  syntax error at or near "FOREIGN" at character 115
+2018-11-30 15:52:10.852 MST [1281] STATEMENT:  CREATE TABLE count (
+	  id serial PRIMARY KEY,
+	  quantity FLOAT NOT NULL, 
+	  type VARCHAR NOT NULL,
+	  inventory_id FOREIGN KEY (id)
+	    REFERENCES inventory (id)
+	);
+2018-11-30 15:52:36.989 MST [1290] FATAL:  database "dryanmas" does not exist
+2018-11-30 15:54:04.181 MST [1292] ERROR:  syntax error at or near "ls" at character 1
+2018-11-30 15:54:04.181 MST [1292] STATEMENT:  ls
+	DROP SCHEMA public CASCADE;
+2018-11-30 15:54:25.450 MST [1324] ERROR:  syntax error at or near "CREATE" at character 116
+2018-11-30 15:54:25.450 MST [1324] STATEMENT:  CREATE TABLE inventory (
+	  id serial PRIMARY KEY,
+	  start_date TIMESTAMP NOT NULL,
+	  end_date TIMESTAMP NOT NULL
+	)
+	CREATE TABLE category (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL,
+	)
+	CREATE TABLE location (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL,
+	)
+	CREATE TABLE item (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL,
+	  unit VARCHAR NOT NULL,
+	  unit_price VARCHAR NOT NULL,
+	  category_id FOREIGN KEY (id)
+	    REFERENCES category (id),
+	  source VARCHAR
+	)
+	CREATE TABLE item_location (
+	  id serial PRIMARY KEY,
+	  item_id FOREIGN KEY (id)
+	    REFERENCES item (id),
+	  location_id FOREIGN KEY (id)
+	    REFERENCES location (id)
+	)
+	CREATE TABLE count (
+	  id serial PRIMARY KEY,
+	  quantity FLOAT NOT NULL, 
+	  type VARCHAR NOT NULL,
+	  inventory_id FOREIGN KEY (id)
+	    REFERENCES inventory (id)
+	)
+2018-11-30 15:56:48.260 MST [1365] ERROR:  no schema has been selected to create in at character 14
+2018-11-30 15:56:48.260 MST [1365] STATEMENT:  CREATE TABLE inventory (
+	  id serial PRIMARY KEY,
+	  start_date TIMESTAMP NOT NULL,
+	  end_date TIMESTAMP NOT NULL
+	);
+2018-11-30 15:56:48.263 MST [1365] ERROR:  no schema has been selected to create in at character 14
+2018-11-30 15:56:48.263 MST [1365] STATEMENT:  CREATE TABLE category (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL
+	);
+2018-11-30 15:56:48.263 MST [1365] ERROR:  syntax error at or near ")" at character 82
+2018-11-30 15:56:48.263 MST [1365] STATEMENT:  CREATE TABLE location (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL,
+	);
+2018-11-30 15:56:48.263 MST [1365] ERROR:  syntax error at or near "FOREIGN" at character 148
+2018-11-30 15:56:48.263 MST [1365] STATEMENT:  CREATE TABLE item (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL,
+	  unit VARCHAR NOT NULL,
+	  unit_price VARCHAR NOT NULL,
+	  category_id FOREIGN KEY (id)
+	    REFERENCES category (id),
+	  source VARCHAR
+	);
+2018-11-30 15:56:48.273 MST [1365] ERROR:  syntax error at or near "FOREIGN" at character 65
+2018-11-30 15:56:48.273 MST [1365] STATEMENT:  CREATE TABLE item_location (
+	  id serial PRIMARY KEY,
+	  item_id FOREIGN KEY (id)
+	    REFERENCES item (id),
+	  location_id FOREIGN KEY (id)
+	    REFERENCES location (id)
+	);
+2018-11-30 15:56:48.273 MST [1365] ERROR:  syntax error at or near "FOREIGN" at character 115
+2018-11-30 15:56:48.273 MST [1365] STATEMENT:  CREATE TABLE count (
+	  id serial PRIMARY KEY,
+	  quantity FLOAT NOT NULL, 
+	  type VARCHAR NOT NULL,
+	  inventory_id FOREIGN KEY (id)
+	    REFERENCES inventory (id)
+	);
+2018-11-30 15:58:20.029 MST [1391] ERROR:  no schema has been selected to create in at character 14
+2018-11-30 15:58:20.029 MST [1391] STATEMENT:  CREATE TABLE inventory (
+	  id serial PRIMARY KEY,
+	  start_date TIMESTAMP NOT NULL,
+	  end_date TIMESTAMP NOT NULL
+	);
+2018-11-30 15:58:20.033 MST [1391] ERROR:  no schema has been selected to create in at character 14
+2018-11-30 15:58:20.033 MST [1391] STATEMENT:  CREATE TABLE category (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL
+	);
+2018-11-30 15:58:20.033 MST [1391] ERROR:  syntax error at or near ")" at character 82
+2018-11-30 15:58:20.033 MST [1391] STATEMENT:  CREATE TABLE location (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL,
+	);
+2018-11-30 15:58:20.034 MST [1391] ERROR:  no schema has been selected to create in at character 14
+2018-11-30 15:58:20.034 MST [1391] STATEMENT:  CREATE TABLE item (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL,
+	  unit VARCHAR NOT NULL,
+	  unit_price VARCHAR NOT NULL,
+	  category_id int REFERENCES category.id ON DELETE CASCADE,
+	  source VARCHAR
+	);
+2018-11-30 15:58:20.034 MST [1391] ERROR:  syntax error at or near "FOREIGN" at character 65
+2018-11-30 15:58:20.034 MST [1391] STATEMENT:  CREATE TABLE item_location (
+	  id serial PRIMARY KEY,
+	  item_id FOREIGN KEY (id)
+	    REFERENCES item (id),
+	  location_id FOREIGN KEY (id)
+	    REFERENCES location (id)
+	);
+2018-11-30 15:58:20.034 MST [1391] ERROR:  syntax error at or near "FOREIGN" at character 115
+2018-11-30 15:58:20.034 MST [1391] STATEMENT:  CREATE TABLE count (
+	  id serial PRIMARY KEY,
+	  quantity FLOAT NOT NULL, 
+	  type VARCHAR NOT NULL,
+	  inventory_id FOREIGN KEY (id)
+	    REFERENCES inventory (id)
+	);
+2018-11-30 15:58:20.035 MST [1391] ERROR:  syntax error at or near "so_id" at character 1
+2018-11-30 15:58:20.035 MST [1391] STATEMENT:  so_id int4 REFERENCES so_headers(id) ON DELETE CASCADE,
+2018-11-30 15:59:47.898 MST [1424] ERROR:  syntax error at or near ")" at character 82
+2018-11-30 15:59:47.898 MST [1424] STATEMENT:  CREATE TABLE location (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL,
+	);
+2018-11-30 15:59:47.915 MST [1424] ERROR:  schema "category" does not exist
+2018-11-30 15:59:47.915 MST [1424] STATEMENT:  CREATE TABLE item (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL,
+	  unit VARCHAR NOT NULL,
+	  unit_price VARCHAR NOT NULL,
+	  category_id int REFERENCES category.id ON DELETE CASCADE,
+	  source VARCHAR
+	);
+2018-11-30 15:59:47.922 MST [1424] ERROR:  syntax error at or near "FOREIGN" at character 65
+2018-11-30 15:59:47.922 MST [1424] STATEMENT:  CREATE TABLE item_location (
+	  id serial PRIMARY KEY,
+	  item_id FOREIGN KEY (id)
+	    REFERENCES item (id),
+	  location_id FOREIGN KEY (id)
+	    REFERENCES location (id)
+	);
+2018-11-30 15:59:47.922 MST [1424] ERROR:  syntax error at or near "FOREIGN" at character 115
+2018-11-30 15:59:47.922 MST [1424] STATEMENT:  CREATE TABLE count (
+	  id serial PRIMARY KEY,
+	  quantity FLOAT NOT NULL, 
+	  type VARCHAR NOT NULL,
+	  inventory_id FOREIGN KEY (id)
+	    REFERENCES inventory (id)
+	);
+2018-11-30 15:59:47.922 MST [1424] ERROR:  syntax error at or near "so_id" at character 1
+2018-11-30 15:59:47.922 MST [1424] STATEMENT:  so_id int4 REFERENCES so_headers(id) ON DELETE CASCADE,
+2018-11-30 16:00:05.338 MST [1428] ERROR:  relation "inventory" already exists
+2018-11-30 16:00:05.338 MST [1428] STATEMENT:  CREATE TABLE inventory (
+	  id serial PRIMARY KEY,
+	  start_date TIMESTAMP NOT NULL,
+	  end_date TIMESTAMP NOT NULL
+	);
+2018-11-30 16:00:05.345 MST [1428] ERROR:  relation "category" already exists
+2018-11-30 16:00:05.345 MST [1428] STATEMENT:  CREATE TABLE category (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL
+	);
+2018-11-30 16:00:05.349 MST [1428] ERROR:  syntax error at or near ")" at character 82
+2018-11-30 16:00:05.349 MST [1428] STATEMENT:  CREATE TABLE location (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL,
+	);
+2018-11-30 16:00:05.366 MST [1428] ERROR:  schema "category" does not exist
+2018-11-30 16:00:05.366 MST [1428] STATEMENT:  CREATE TABLE item (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL,
+	  unit VARCHAR NOT NULL,
+	  unit_price VARCHAR NOT NULL,
+	  category_id int REFERENCES category.id ON DELETE CASCADE,
+	  source VARCHAR
+	);
+2018-11-30 16:00:05.370 MST [1428] ERROR:  syntax error at or near "FOREIGN" at character 65
+2018-11-30 16:00:05.370 MST [1428] STATEMENT:  CREATE TABLE item_location (
+	  id serial PRIMARY KEY,
+	  item_id FOREIGN KEY (id)
+	    REFERENCES item (id),
+	  location_id FOREIGN KEY (id)
+	    REFERENCES location (id)
+	);
+2018-11-30 16:00:05.370 MST [1428] ERROR:  syntax error at or near "FOREIGN" at character 115
+2018-11-30 16:00:05.370 MST [1428] STATEMENT:  CREATE TABLE count (
+	  id serial PRIMARY KEY,
+	  quantity FLOAT NOT NULL, 
+	  type VARCHAR NOT NULL,
+	  inventory_id FOREIGN KEY (id)
+	    REFERENCES inventory (id)
+	);
+2018-11-30 16:00:23.484 MST [1436] ERROR:  relation "inventory" already exists
+2018-11-30 16:00:23.484 MST [1436] STATEMENT:  CREATE TABLE inventory (
+	  id serial PRIMARY KEY,
+	  start_date TIMESTAMP NOT NULL,
+	  end_date TIMESTAMP NOT NULL
+	);
+2018-11-30 16:00:23.491 MST [1436] ERROR:  relation "category" already exists
+2018-11-30 16:00:23.491 MST [1436] STATEMENT:  CREATE TABLE category (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL
+	);
+2018-11-30 16:00:23.494 MST [1436] ERROR:  syntax error at or near ")" at character 82
+2018-11-30 16:00:23.494 MST [1436] STATEMENT:  CREATE TABLE location (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL,
+	);
+2018-11-30 16:00:23.530 MST [1436] ERROR:  schema "category" does not exist
+2018-11-30 16:00:23.530 MST [1436] STATEMENT:  CREATE TABLE item (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL,
+	  unit VARCHAR NOT NULL,
+	  unit_price VARCHAR NOT NULL,
+	  category_id int REFERENCES category.id ON DELETE CASCADE,
+	  source VARCHAR
+	);
+2018-11-30 16:00:23.534 MST [1436] ERROR:  syntax error at or near "FOREIGN" at character 65
+2018-11-30 16:00:23.534 MST [1436] STATEMENT:  CREATE TABLE item_location (
+	  id serial PRIMARY KEY,
+	  item_id FOREIGN KEY (id)
+	    REFERENCES item (id),
+	  location_id FOREIGN KEY (id)
+	    REFERENCES location (id)
+	);
+2018-11-30 16:00:23.535 MST [1436] ERROR:  syntax error at or near "FOREIGN" at character 115
+2018-11-30 16:00:23.535 MST [1436] STATEMENT:  CREATE TABLE count (
+	  id serial PRIMARY KEY,
+	  quantity FLOAT NOT NULL, 
+	  type VARCHAR NOT NULL,
+	  inventory_id FOREIGN KEY (id)
+	    REFERENCES inventory (id)
+	);
+2018-11-30 16:01:01.454 MST [1450] ERROR:  schema "category" does not exist
+2018-11-30 16:01:01.454 MST [1450] STATEMENT:  CREATE TABLE item (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL,
+	  unit VARCHAR NOT NULL,
+	  unit_price VARCHAR NOT NULL,
+	  category_id int REFERENCES category.id ON DELETE CASCADE,
+	  source VARCHAR
+	);
+2018-11-30 16:01:01.456 MST [1450] ERROR:  syntax error at or near "FOREIGN" at character 65
+2018-11-30 16:01:01.456 MST [1450] STATEMENT:  CREATE TABLE item_location (
+	  id serial PRIMARY KEY,
+	  item_id FOREIGN KEY (id)
+	    REFERENCES item (id),
+	  location_id FOREIGN KEY (id)
+	    REFERENCES location (id)
+	);
+2018-11-30 16:01:01.457 MST [1450] ERROR:  syntax error at or near "FOREIGN" at character 115
+2018-11-30 16:01:01.457 MST [1450] STATEMENT:  CREATE TABLE count (
+	  id serial PRIMARY KEY,
+	  quantity FLOAT NOT NULL, 
+	  type VARCHAR NOT NULL,
+	  inventory_id FOREIGN KEY (id)
+	    REFERENCES inventory (id)
+	);
+2018-11-30 16:04:58.909 MST [1518] ERROR:  relation "inventory" already exists
+2018-11-30 16:04:58.909 MST [1518] STATEMENT:  CREATE TABLE inventory (
+	  id serial PRIMARY KEY,
+	  start_date TIMESTAMP NOT NULL,
+	  end_date TIMESTAMP NOT NULL
+	);
+2018-11-30 16:04:58.922 MST [1518] ERROR:  relation "category" already exists
+2018-11-30 16:04:58.922 MST [1518] STATEMENT:  CREATE TABLE category (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL
+	);
+2018-11-30 16:04:58.935 MST [1518] ERROR:  relation "location" already exists
+2018-11-30 16:04:58.935 MST [1518] STATEMENT:  CREATE TABLE location (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL
+	);
+2018-11-30 16:04:58.970 MST [1518] ERROR:  schema "category" does not exist
+2018-11-30 16:04:58.970 MST [1518] STATEMENT:  CREATE TABLE item (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL,
+	  unit VARCHAR NOT NULL,
+	  unit_price VARCHAR NOT NULL,
+	  category_id int REFERENCES category.id ON DELETE CASCADE,
+	  source VARCHAR
+	);
+2018-11-30 16:04:58.974 MST [1518] ERROR:  syntax error at or near "FOREIGN" at character 65
+2018-11-30 16:04:58.974 MST [1518] STATEMENT:  CREATE TABLE item_location (
+	  id serial PRIMARY KEY,
+	  item_id FOREIGN KEY (id)
+	    REFERENCES item (id),
+	  location_id FOREIGN KEY (id)
+	    REFERENCES location (id)
+	);
+2018-11-30 16:04:58.976 MST [1518] ERROR:  syntax error at or near "FOREIGN" at character 115
+2018-11-30 16:04:58.976 MST [1518] STATEMENT:  CREATE TABLE count (
+	  id serial PRIMARY KEY,
+	  quantity FLOAT NOT NULL, 
+	  type VARCHAR NOT NULL,
+	  inventory_id FOREIGN KEY (id)
+	    REFERENCES inventory (id)
+	);
+2018-11-30 16:05:25.843 MST [1525] ERROR:  relation "inventory" already exists
+2018-11-30 16:05:25.843 MST [1525] STATEMENT:  CREATE TABLE inventory (
+	  id serial PRIMARY KEY,
+	  start_date TIMESTAMP NOT NULL,
+	  end_date TIMESTAMP NOT NULL
+	);
+2018-11-30 16:05:25.847 MST [1525] ERROR:  relation "category" already exists
+2018-11-30 16:05:25.847 MST [1525] STATEMENT:  CREATE TABLE category (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL
+	);
+2018-11-30 16:05:25.853 MST [1525] ERROR:  relation "location" already exists
+2018-11-30 16:05:25.853 MST [1525] STATEMENT:  CREATE TABLE location (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL
+	);
+2018-11-30 16:05:25.914 MST [1525] ERROR:  syntax error at or near "FOREIGN" at character 65
+2018-11-30 16:05:25.914 MST [1525] STATEMENT:  CREATE TABLE item_location (
+	  id serial PRIMARY KEY,
+	  item_id FOREIGN KEY (id)
+	    REFERENCES item (id),
+	  location_id FOREIGN KEY (id)
+	    REFERENCES location (id)
+	);
+2018-11-30 16:05:25.914 MST [1525] ERROR:  syntax error at or near "FOREIGN" at character 115
+2018-11-30 16:05:25.914 MST [1525] STATEMENT:  CREATE TABLE count (
+	  id serial PRIMARY KEY,
+	  quantity FLOAT NOT NULL, 
+	  type VARCHAR NOT NULL,
+	  inventory_id FOREIGN KEY (id)
+	    REFERENCES inventory (id)
+	);
+2018-11-30 16:06:30.432 MST [1544] ERROR:  relation "inventory" already exists
+2018-11-30 16:06:30.432 MST [1544] STATEMENT:  CREATE TABLE inventory (
+	  id serial PRIMARY KEY,
+	  start_date TIMESTAMP NOT NULL,
+	  end_date TIMESTAMP NOT NULL
+	);
+2018-11-30 16:06:30.439 MST [1544] ERROR:  relation "category" already exists
+2018-11-30 16:06:30.439 MST [1544] STATEMENT:  CREATE TABLE category (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL
+	);
+2018-11-30 16:06:30.446 MST [1544] ERROR:  relation "location" already exists
+2018-11-30 16:06:30.446 MST [1544] STATEMENT:  CREATE TABLE location (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL
+	);
+2018-11-30 16:06:30.454 MST [1544] ERROR:  relation "item" already exists
+2018-11-30 16:06:30.454 MST [1544] STATEMENT:  CREATE TABLE item (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL,
+	  unit VARCHAR NOT NULL,
+	  unit_price VARCHAR NOT NULL,
+	  category_id int REFERENCES category(id) ON DELETE CASCADE,
+	  source VARCHAR
+	);
+2018-11-30 16:31:52.893 MST [2276] ERROR:  cannot drop table item because other objects depend on it
+2018-11-30 16:31:52.893 MST [2276] DETAIL:  constraint item_location_item_id_fkey on table item_location depends on table item
+2018-11-30 16:31:52.893 MST [2276] HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+2018-11-30 16:31:52.893 MST [2276] STATEMENT:  DROP TABLE item;
+2018-11-30 16:32:05.882 MST [2282] ERROR:  relation "inventory" already exists
+2018-11-30 16:32:05.882 MST [2282] STATEMENT:  CREATE TABLE inventory (
+	  id serial PRIMARY KEY,
+	  start_date TIMESTAMP NOT NULL,
+	  end_date TIMESTAMP NOT NULL
+	);
+2018-11-30 16:32:05.893 MST [2282] ERROR:  relation "category" already exists
+2018-11-30 16:32:05.893 MST [2282] STATEMENT:  CREATE TABLE category (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL
+	);
+2018-11-30 16:32:05.901 MST [2282] ERROR:  relation "location" already exists
+2018-11-30 16:32:05.901 MST [2282] STATEMENT:  CREATE TABLE location (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL
+	);
+2018-11-30 16:32:05.964 MST [2282] ERROR:  relation "item_location" already exists
+2018-11-30 16:32:05.964 MST [2282] STATEMENT:  CREATE TABLE item_location (
+	  id serial PRIMARY KEY,
+	  item_id int REFERENCES item(id) ON DELETE CASCADE,
+	  location_id int REFERENCES location(id) ON DELETE CASCADE
+	);
+2018-11-30 16:32:05.972 MST [2282] ERROR:  relation "count" already exists
+2018-11-30 16:32:05.972 MST [2282] STATEMENT:  CREATE TABLE count (
+	  id serial PRIMARY KEY,
+	  quantity FLOAT NOT NULL, 
+	  type VARCHAR NOT NULL,
+	  inventory_id int REFERENCES inventory (id) ON DELETE CASCADE
+	);
+2018-12-02 12:32:46.089 MST [17096] ERROR:  relation "locations" does not exist at character 15
+2018-12-02 12:32:46.089 MST [17096] STATEMENT:  SELECT * FROM locations;
+2018-12-02 12:34:23.041 MST [17096] ERROR:  relation "locations" does not exist at character 13
+2018-12-02 12:34:23.041 MST [17096] STATEMENT:  DELETE FROM locations;
+2018-12-02 12:38:33.379 MST [17271] ERROR:  relation "categories" does not exist at character 15
+2018-12-02 12:38:33.379 MST [17271] STATEMENT:  SELECT * FROM categories
+	;
+2018-12-02 13:03:37.023 MST [18050] ERROR:  duplicate key value violates unique constraint "location_name_key"
+2018-12-02 13:03:37.023 MST [18050] DETAIL:  Key (name)=(coffee) already exists.
+2018-12-02 13:03:37.023 MST [18050] STATEMENT:  insert into "location" ("name") values ($1), ($2), ($3), ($4), ($5), ($6), ($7), ($8), ($9), ($10), ($11), ($12), ($13), ($14)
+2018-12-02 13:04:35.479 MST [18078] ERROR:  relation "locations" does not exist at character 13
+2018-12-02 13:04:35.479 MST [18078] STATEMENT:  DELETE FROM locations;
+2018-12-02 13:19:54.915 MST [18376] ERROR:  cannot drop table category because other objects depend on it
+2018-12-02 13:19:54.915 MST [18376] DETAIL:  constraint item_category_id_fkey on table item depends on table category
+2018-12-02 13:19:54.915 MST [18376] HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+2018-12-02 13:19:54.915 MST [18376] STATEMENT:  DROP TABLE category;
+2018-12-02 13:20:17.626 MST [18376] ERROR:  cannot drop table location because other objects depend on it
+2018-12-02 13:20:17.626 MST [18376] DETAIL:  constraint item_location_location_id_fkey on table item_location depends on table location
+2018-12-02 13:20:17.626 MST [18376] HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+2018-12-02 13:20:17.626 MST [18376] STATEMENT:  DROP TABLE location;
+2018-12-02 13:26:33.895 MST [18538] ERROR:  relation "items" does not exist at character 15
+2018-12-02 13:26:33.895 MST [18538] STATEMENT:  SELECT * FROM items;
+2018-12-02 13:26:50.107 MST [18544] ERROR:  syntax error at or near "FROM" at character 6
+2018-12-02 13:26:50.107 MST [18544] STATEMENT:  DROP FROM item;
+2018-12-02 13:28:13.810 MST [18580] ERROR:  duplicate key value violates unique constraint "item_name_key"
+2018-12-02 13:28:13.810 MST [18580] DETAIL:  Key (name)=(garlic) already exists.
+2018-12-02 13:28:13.810 MST [18580] STATEMENT:  insert into "item" ("category_id", "name", "source", "unit", "unit_price") values ($1, $2, $3, $4, $5), ($6, $7, $8, $9, $10), ($11, $12, $13, $14, $15), ($16, $17, $18, $19, $20), ($21, $22, $23, $24, $25), ($26, $27, $28, $29, $30), ($31, $32, $33, $34, $35), ($36, $37, $38, $39, $40), ($41, $42, $43, $44, $45), ($46, $47, $48, $49, $50), ($51, $52, $53, $54, $55), ($56, $57, $58, $59, $60), ($61, $62, $63, $64, $65), ($66, $67, $68, $69, $70), ($71, $72, $73, $74, $75), ($76, $77, $78, $79, $80), ($81, $82, $83, $84, $85), ($86, $87, $88, $89, $90), ($91, $92, $93, $94, $95), ($96, $97, $98, $99, $100), ($101, $102, $103, $104, $105), ($106, $107, $108, $109, $110), ($111, $112, $113, $114, $115), ($116, $117, $118, $119, $120), ($121, $122, $123, $124, $125), ($126, $127, $128, $129, $130), ($131, $132, $133, $134, $135), ($136, $137, $138, $139, $140), ($141, $142, $143, $144, $145), ($146, $147, $148, $149, $150), ($151, $152, $153, $154, $155), ($156, $157, $158, $159, $160), ($161, $162, $163, $164, $165), ($166, $167, $168, $169, $170), ($171, $172, $173, $174, $175), ($176, $177, $178, $179, $180), ($181, $182, $183, $184, $185), ($186, $187, $188, $189, $190), ($191, $192, $193, $194, $195), ($196, $197, $198, $199, $200), ($201, $202, $203, $204, $205), ($206, $207, $208, $209, $210), ($211, $212, $213, $214, $215), ($216, $217, $218, $219, $220), ($221, $222, $223, $224, $225), ($226, $227, $228, $229, $230), ($231, $232, $233, $234, $235), ($236, $237, $238, $239, $240), ($241, $242, $243, $244, $245), ($246, $247, $248, $249, $250), ($251, $252, $253, $254, $255), ($256, $257, $258, $259, $260), ($261, $262, $263, $264, $265), ($266, $267, $268, $269, $270), ($271, $272, $273, $274, $275), ($276, $277, $278, $279, $280), ($281, $282, $283, $284, $285), ($286, $287, $288, $289, $290), ($291, $292, $293, $294, $295), ($296, $297, $298, $299, $300), ($301, $302, $303, $304, $305), ($306, $307, $308, $309, $310), ($311, $312, $313, $314, $315), ($316, $317, $318, $319, $320), ($321, $322, $323, $324, $325), ($326, $327, $328, $329, $330), ($331, $332, $333, $334, $335), ($336, $337, $338, $339, $340), ($341, $342, $343, $344, $345), ($346, $347, $348, $349, $350), ($351, $352, $353, $354, $355), ($356, $357, $358, $359, $360), ($361, $362, $363, $364, $365), ($366, $367, $368, $369, $370), ($371, $372, $373, $374, $375), ($376, $377, $378, $379, $380), ($381, $382, $383, $384, $385), ($386, $387, $388, $389, $390), ($391, $392, $393, $394, $395), ($396, $397, $398, $399, $400), ($401, $402, $403, $404, $405), ($406, $407, $408, $409, $410), ($411, $412, $413, $414, $415), ($416, $417, $418, $419, $420), ($421, $422, $423, $424, $425), ($426, $427, $428, $429, $430), ($431, $432, $433, $434, $435), ($436, $437, $438, $439, $440), ($441, $442, $443, $444, $445), ($446, $447, $448, $449, $450), ($451, $452, $453, $454, $455), ($456, $457, $458, $459, $460), ($461, $462, $463, $464, $465), ($466, $467, $468, $469, $470), ($471, $472, $473, $474, $475), ($476, $477, $478, $479, $480), ($481, $482, $483, $484, $485), ($486, $487, $488, $489, $490), ($491, $492, $493, $494, $495), ($496, $497, $498, $499, $500), ($501, $502, $503, $504, $505), ($506, $507, $508, $509, $510), ($511, $512, $513, $514, $515), ($516, $517, $518, $519, $520)
+2018-12-02 13:29:26.547 MST [18611] ERROR:  duplicate key value violates unique constraint "item_name_key"
+2018-12-02 13:29:26.547 MST [18611] DETAIL:  Key (name)=(garlic) already exists.
+2018-12-02 13:29:26.547 MST [18611] STATEMENT:  insert into "item" ("category_id", "name", "source", "unit", "unit_price") values ($1, $2, $3, $4, $5), ($6, $7, $8, $9, $10), ($11, $12, $13, $14, $15), ($16, $17, $18, $19, $20), ($21, $22, $23, $24, $25), ($26, $27, $28, $29, $30), ($31, $32, $33, $34, $35), ($36, $37, $38, $39, $40), ($41, $42, $43, $44, $45), ($46, $47, $48, $49, $50), ($51, $52, $53, $54, $55), ($56, $57, $58, $59, $60), ($61, $62, $63, $64, $65), ($66, $67, $68, $69, $70), ($71, $72, $73, $74, $75), ($76, $77, $78, $79, $80), ($81, $82, $83, $84, $85), ($86, $87, $88, $89, $90), ($91, $92, $93, $94, $95), ($96, $97, $98, $99, $100), ($101, $102, $103, $104, $105), ($106, $107, $108, $109, $110), ($111, $112, $113, $114, $115), ($116, $117, $118, $119, $120), ($121, $122, $123, $124, $125), ($126, $127, $128, $129, $130), ($131, $132, $133, $134, $135), ($136, $137, $138, $139, $140), ($141, $142, $143, $144, $145), ($146, $147, $148, $149, $150), ($151, $152, $153, $154, $155), ($156, $157, $158, $159, $160), ($161, $162, $163, $164, $165), ($166, $167, $168, $169, $170), ($171, $172, $173, $174, $175), ($176, $177, $178, $179, $180), ($181, $182, $183, $184, $185), ($186, $187, $188, $189, $190), ($191, $192, $193, $194, $195), ($196, $197, $198, $199, $200), ($201, $202, $203, $204, $205), ($206, $207, $208, $209, $210), ($211, $212, $213, $214, $215), ($216, $217, $218, $219, $220), ($221, $222, $223, $224, $225), ($226, $227, $228, $229, $230), ($231, $232, $233, $234, $235), ($236, $237, $238, $239, $240), ($241, $242, $243, $244, $245), ($246, $247, $248, $249, $250), ($251, $252, $253, $254, $255), ($256, $257, $258, $259, $260), ($261, $262, $263, $264, $265), ($266, $267, $268, $269, $270), ($271, $272, $273, $274, $275), ($276, $277, $278, $279, $280), ($281, $282, $283, $284, $285), ($286, $287, $288, $289, $290), ($291, $292, $293, $294, $295), ($296, $297, $298, $299, $300), ($301, $302, $303, $304, $305), ($306, $307, $308, $309, $310), ($311, $312, $313, $314, $315), ($316, $317, $318, $319, $320), ($321, $322, $323, $324, $325), ($326, $327, $328, $329, $330), ($331, $332, $333, $334, $335), ($336, $337, $338, $339, $340), ($341, $342, $343, $344, $345), ($346, $347, $348, $349, $350), ($351, $352, $353, $354, $355), ($356, $357, $358, $359, $360), ($361, $362, $363, $364, $365), ($366, $367, $368, $369, $370), ($371, $372, $373, $374, $375), ($376, $377, $378, $379, $380), ($381, $382, $383, $384, $385), ($386, $387, $388, $389, $390), ($391, $392, $393, $394, $395), ($396, $397, $398, $399, $400), ($401, $402, $403, $404, $405), ($406, $407, $408, $409, $410), ($411, $412, $413, $414, $415), ($416, $417, $418, $419, $420), ($421, $422, $423, $424, $425), ($426, $427, $428, $429, $430), ($431, $432, $433, $434, $435), ($436, $437, $438, $439, $440), ($441, $442, $443, $444, $445), ($446, $447, $448, $449, $450), ($451, $452, $453, $454, $455), ($456, $457, $458, $459, $460), ($461, $462, $463, $464, $465), ($466, $467, $468, $469, $470), ($471, $472, $473, $474, $475), ($476, $477, $478, $479, $480), ($481, $482, $483, $484, $485), ($486, $487, $488, $489, $490), ($491, $492, $493, $494, $495), ($496, $497, $498, $499, $500), ($501, $502, $503, $504, $505), ($506, $507, $508, $509, $510), ($511, $512, $513, $514, $515), ($516, $517, $518, $519, $520)
+2018-12-02 13:29:36.727 MST [18629] ERROR:  duplicate key value violates unique constraint "item_name_key"
+2018-12-02 13:29:36.727 MST [18629] DETAIL:  Key (name)=(deli container) already exists.
+2018-12-02 13:29:36.727 MST [18629] STATEMENT:  insert into "item" ("category_id", "name", "source", "unit", "unit_price") values ($1, $2, $3, $4, $5), ($6, $7, $8, $9, $10), ($11, $12, $13, $14, $15), ($16, $17, $18, $19, $20), ($21, $22, $23, $24, $25), ($26, $27, $28, $29, $30), ($31, $32, $33, $34, $35), ($36, $37, $38, $39, $40), ($41, $42, $43, $44, $45), ($46, $47, $48, $49, $50), ($51, $52, $53, $54, $55), ($56, $57, $58, $59, $60), ($61, $62, $63, $64, $65), ($66, $67, $68, $69, $70), ($71, $72, $73, $74, $75), ($76, $77, $78, $79, $80), ($81, $82, $83, $84, $85), ($86, $87, $88, $89, $90), ($91, $92, $93, $94, $95), ($96, $97, $98, $99, $100), ($101, $102, $103, $104, $105), ($106, $107, $108, $109, $110), ($111, $112, $113, $114, $115), ($116, $117, $118, $119, $120), ($121, $122, $123, $124, $125), ($126, $127, $128, $129, $130), ($131, $132, $133, $134, $135), ($136, $137, $138, $139, $140), ($141, $142, $143, $144, $145), ($146, $147, $148, $149, $150), ($151, $152, $153, $154, $155), ($156, $157, $158, $159, $160), ($161, $162, $163, $164, $165), ($166, $167, $168, $169, $170), ($171, $172, $173, $174, $175), ($176, $177, $178, $179, $180), ($181, $182, $183, $184, $185), ($186, $187, $188, $189, $190), ($191, $192, $193, $194, $195), ($196, $197, $198, $199, $200), ($201, $202, $203, $204, $205), ($206, $207, $208, $209, $210), ($211, $212, $213, $214, $215), ($216, $217, $218, $219, $220), ($221, $222, $223, $224, $225), ($226, $227, $228, $229, $230), ($231, $232, $233, $234, $235), ($236, $237, $238, $239, $240), ($241, $242, $243, $244, $245), ($246, $247, $248, $249, $250), ($251, $252, $253, $254, $255), ($256, $257, $258, $259, $260), ($261, $262, $263, $264, $265), ($266, $267, $268, $269, $270), ($271, $272, $273, $274, $275), ($276, $277, $278, $279, $280), ($281, $282, $283, $284, $285), ($286, $287, $288, $289, $290), ($291, $292, $293, $294, $295), ($296, $297, $298, $299, $300), ($301, $302, $303, $304, $305), ($306, $307, $308, $309, $310), ($311, $312, $313, $314, $315), ($316, $317, $318, $319, $320), ($321, $322, $323, $324, $325), ($326, $327, $328, $329, $330), ($331, $332, $333, $334, $335), ($336, $337, $338, $339, $340), ($341, $342, $343, $344, $345), ($346, $347, $348, $349, $350), ($351, $352, $353, $354, $355), ($356, $357, $358, $359, $360), ($361, $362, $363, $364, $365), ($366, $367, $368, $369, $370), ($371, $372, $373, $374, $375), ($376, $377, $378, $379, $380), ($381, $382, $383, $384, $385), ($386, $387, $388, $389, $390), ($391, $392, $393, $394, $395), ($396, $397, $398, $399, $400), ($401, $402, $403, $404, $405), ($406, $407, $408, $409, $410), ($411, $412, $413, $414, $415), ($416, $417, $418, $419, $420), ($421, $422, $423, $424, $425), ($426, $427, $428, $429, $430), ($431, $432, $433, $434, $435), ($436, $437, $438, $439, $440), ($441, $442, $443, $444, $445), ($446, $447, $448, $449, $450), ($451, $452, $453, $454, $455), ($456, $457, $458, $459, $460), ($461, $462, $463, $464, $465), ($466, $467, $468, $469, $470), ($471, $472, $473, $474, $475), ($476, $477, $478, $479, $480), ($481, $482, $483, $484, $485), ($486, $487, $488, $489, $490), ($491, $492, $493, $494, $495), ($496, $497, $498, $499, $500), ($501, $502, $503, $504, $505), ($506, $507, $508, $509, $510)
+2018-12-02 14:02:51.749 MST [19425] ERROR:  relation "inventory" already exists
+2018-12-02 14:02:51.749 MST [19425] STATEMENT:  CREATE TABLE inventory (
+	  id serial PRIMARY KEY,
+	  start_date TIMESTAMP NOT NULL,
+	  end_date TIMESTAMP NOT NULL
+	);
+2018-12-02 14:02:51.759 MST [19425] ERROR:  relation "category" already exists
+2018-12-02 14:02:51.759 MST [19425] STATEMENT:  CREATE TABLE category (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL
+	);
+2018-12-02 14:02:51.769 MST [19425] ERROR:  relation "location" already exists
+2018-12-02 14:02:51.769 MST [19425] STATEMENT:  CREATE TABLE location (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL
+	);
+2018-12-02 14:02:51.773 MST [19425] ERROR:  relation "item" already exists
+2018-12-02 14:02:51.773 MST [19425] STATEMENT:  CREATE TABLE item (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL,
+	  unit VARCHAR NOT NULL,
+	  unit_price FLOAT NOT NULL,
+	  category_id INT REFERENCES category(id) ON DELETE CASCADE NOT NULL,
+	  source VARCHAR
+	);
+2018-12-02 14:02:51.777 MST [19425] ERROR:  relation "item_location" already exists
+2018-12-02 14:02:51.777 MST [19425] STATEMENT:  CREATE TABLE item_location (
+	  id serial PRIMARY KEY,
+	  item_id int REFERENCES item(id) ON DELETE CASCADE NOT NULL,
+	  location_id int REFERENCES location(id) ON DELETE CASCADE NOT NULL
+	);
+2018-12-02 14:02:51.784 MST [19425] ERROR:  relation "item_location" already exists
+2018-12-02 14:02:51.784 MST [19425] STATEMENT:  ALTER TABLE item_location 
+	  ADD CONSTRAINT item_location UNIQUE(item_id, location_id);
+2018-12-02 14:02:51.786 MST [19425] ERROR:  relation "count" already exists
+2018-12-02 14:02:51.786 MST [19425] STATEMENT:  CREATE TABLE count (
+	  id serial PRIMARY KEY,
+	  quantity FLOAT NOT NULL, 
+	  type VARCHAR NOT NULL,
+	  inventory_id int REFERENCES inventory (id) ON DELETE CASCADE NOT NULL
+	);
+2018-12-02 14:04:36.400 MST [19455] FATAL:  database "dryanmas" does not exist
+2018-12-02 14:04:49.872 MST [19462] ERROR:  relation "inventory" already exists
+2018-12-02 14:04:49.872 MST [19462] STATEMENT:  CREATE TABLE inventory (
+	  id serial PRIMARY KEY,
+	  start_date TIMESTAMP NOT NULL,
+	  end_date TIMESTAMP NOT NULL
+	);
+2018-12-02 14:04:49.881 MST [19462] ERROR:  relation "category" already exists
+2018-12-02 14:04:49.881 MST [19462] STATEMENT:  CREATE TABLE category (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL
+	);
+2018-12-02 14:04:49.886 MST [19462] ERROR:  relation "location" already exists
+2018-12-02 14:04:49.886 MST [19462] STATEMENT:  CREATE TABLE location (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL
+	);
+2018-12-02 14:04:49.894 MST [19462] ERROR:  relation "item" already exists
+2018-12-02 14:04:49.894 MST [19462] STATEMENT:  CREATE TABLE item (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL,
+	  unit VARCHAR NOT NULL,
+	  unit_price FLOAT NOT NULL,
+	  category_id INT REFERENCES category(id) ON DELETE CASCADE NOT NULL,
+	  source VARCHAR
+	);
+2018-12-02 14:04:49.921 MST [19462] ERROR:  relation "count" already exists
+2018-12-02 14:04:49.921 MST [19462] STATEMENT:  CREATE TABLE count (
+	  id serial PRIMARY KEY,
+	  quantity FLOAT NOT NULL, 
+	  type VARCHAR NOT NULL,
+	  inventory_id int REFERENCES inventory (id) ON DELETE CASCADE NOT NULL
+	);
+2018-12-02 14:07:22.536 MST [19523] ERROR:  relation "items" does not exist at character 15
+2018-12-02 14:07:22.536 MST [19523] STATEMENT:  SELECT * FROM items;
+2018-12-02 15:54:10.243 MST [21750] ERROR:  relation "locations" does not exist at character 15
+2018-12-02 15:54:10.243 MST [21750] STATEMENT:  SELECT * FROM locations;
+2018-12-04 12:28:48.951 MST [48108] ERROR:  syntax error at or near "select" at character 64
+2018-12-04 12:28:48.951 MST [48108] STATEMENT:  select *, "name" as "item_name" from "item_location" left join select * from "item" on "item_location"."item_id" = "item"."id" left join "location" on "item_location"."location_id" = "location"."id"
+2018-12-04 12:29:16.894 MST [48119] ERROR:  syntax error at or near "select" at character 41
+2018-12-04 12:29:16.894 MST [48119] STATEMENT:  select * from "item_location" left join select * from "item" on "item_location"."item_id" = "item"."id" left join "location"."name" as "location_name" on "item_location"."location_id" = "location"."id"
+2018-12-04 12:29:50.237 MST [48129] ERROR:  syntax error at or near "select" at character 41
+2018-12-04 12:29:50.237 MST [48129] STATEMENT:  select * from "item_location" left join select * from "item" on "item_location"."item_id" = "item"."id" left join "location" on "item_location"."location_id" = "location"."id"
+2018-12-04 15:02:06.448 MST [50173] ERROR:  syntax error at or near "DETELE" at character 1
+2018-12-04 15:02:06.448 MST [50173] STATEMENT:  DETELE FROM item_location;
+2018-12-04 15:08:00.773 MST [50584] ERROR:  cannot drop table item because other objects depend on it
+2018-12-04 15:08:00.773 MST [50584] DETAIL:  constraint item_location_item_id_fkey on table item_location depends on table item
+2018-12-04 15:08:00.773 MST [50584] HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+2018-12-04 15:08:00.773 MST [50584] STATEMENT:  DROP TABLE item;
+2018-12-04 15:09:32.612 MST [50628] ERROR:  relation "inventory" already exists
+2018-12-04 15:09:32.612 MST [50628] STATEMENT:  CREATE TABLE inventory (
+	  id serial PRIMARY KEY,
+	  start_date TIMESTAMP NOT NULL,
+	  end_date TIMESTAMP NOT NULL
+	);
+2018-12-04 15:09:32.638 MST [50628] ERROR:  relation "category" already exists
+2018-12-04 15:09:32.638 MST [50628] STATEMENT:  CREATE TABLE category (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL
+	);
+2018-12-04 15:09:32.643 MST [50628] ERROR:  relation "location" already exists
+2018-12-04 15:09:32.643 MST [50628] STATEMENT:  CREATE TABLE location (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL
+	);
+2018-12-04 15:09:32.769 MST [50628] ERROR:  relation "count" already exists
+2018-12-04 15:09:32.769 MST [50628] STATEMENT:  CREATE TABLE count (
+	  id serial PRIMARY KEY,
+	  quantity FLOAT NOT NULL, 
+	  type VARCHAR NOT NULL,
+	  inventory_id int REFERENCES inventory (id) ON DELETE CASCADE NOT NULL
+	);
+2018-12-04 15:10:02.460 MST [50654] ERROR:  null value in column "red" violates not-null constraint
+2018-12-04 15:10:02.460 MST [50654] DETAIL:  Failing row contains (1, twitch, lb, 9.5, null, null, null, 15, press).
+2018-12-04 15:10:02.460 MST [50654] STATEMENT:  insert into "item" ("category_id", "name", "source", "unit", "unit_price") values ($1, $2, $3, $4, $5), ($6, $7, $8, $9, $10), ($11, $12, $13, $14, $15), ($16, $17, $18, $19, $20), ($21, $22, $23, $24, $25), ($26, $27, $28, $29, $30), ($31, $32, $33, $34, $35), ($36, $37, $38, $39, $40), ($41, $42, $43, $44, $45), ($46, $47, $48, $49, $50), ($51, $52, $53, $54, $55), ($56, $57, $58, $59, $60), ($61, $62, $63, $64, $65), ($66, $67, $68, $69, $70), ($71, $72, $73, $74, $75), ($76, $77, $78, $79, $80), ($81, $82, $83, $84, $85), ($86, $87, $88, $89, $90), ($91, $92, $93, $94, $95), ($96, $97, $98, $99, $100), ($101, $102, $103, $104, $105), ($106, $107, $108, $109, $110), ($111, $112, $113, $114, $115), ($116, $117, $118, $119, $120), ($121, $122, $123, $124, $125), ($126, $127, $128, $129, $130), ($131, $132, $133, $134, $135), ($136, $137, $138, $139, $140), ($141, $142, $143, $144, $145), ($146, $147, $148, $149, $150), ($151, $152, $153, $154, $155), ($156, $157, $158, $159, $160), ($161, $162, $163, $164, $165), ($166, $167, $168, $169, $170), ($171, $172, $173, $174, $175), ($176, $177, $178, $179, $180), ($181, $182, $183, $184, $185), ($186, $187, $188, $189, $190), ($191, $192, $193, $194, $195), ($196, $197, $198, $199, $200), ($201, $202, $203, $204, $205), ($206, $207, $208, $209, $210), ($211, $212, $213, $214, $215), ($216, $217, $218, $219, $220), ($221, $222, $223, $224, $225), ($226, $227, $228, $229, $230), ($231, $232, $233, $234, $235), ($236, $237, $238, $239, $240), ($241, $242, $243, $244, $245), ($246, $247, $248, $249, $250), ($251, $252, $253, $254, $255), ($256, $257, $258, $259, $260), ($261, $262, $263, $264, $265), ($266, $267, $268, $269, $270), ($271, $272, $273, $274, $275), ($276, $277, $278, $279, $280), ($281, $282, $283, $284, $285), ($286, $287, $288, $289, $290), ($291, $292, $293, $294, $295), ($296, $297, $298, $299, $300), ($301, $302, $303, $304, $305), ($306, $307, $308, $309, $310), ($311, $312, $313, $314, $315), ($316, $317, $318, $319, $320), ($321, $322, $323, $324, $325), ($326, $327, $328, $329, $330), ($331, $332, $333, $334, $335), ($336, $337, $338, $339, $340), ($341, $342, $343, $344, $345), ($346, $347, $348, $349, $350), ($351, $352, $353, $354, $355), ($356, $357, $358, $359, $360), ($361, $362, $363, $364, $365), ($366, $367, $368, $369, $370), ($371, $372, $373, $374, $375), ($376, $377, $378, $379, $380), ($381, $382, $383, $384, $385), ($386, $387, $388, $389, $390), ($391, $392, $393, $394, $395), ($396, $397, $398, $399, $400), ($401, $402, $403, $404, $405), ($406, $407, $408, $409, $410), ($411, $412, $413, $414, $415), ($416, $417, $418, $419, $420), ($421, $422, $423, $424, $425), ($426, $427, $428, $429, $430), ($431, $432, $433, $434, $435), ($436, $437, $438, $439, $440), ($441, $442, $443, $444, $445), ($446, $447, $448, $449, $450), ($451, $452, $453, $454, $455), ($456, $457, $458, $459, $460), ($461, $462, $463, $464, $465), ($466, $467, $468, $469, $470), ($471, $472, $473, $474, $475), ($476, $477, $478, $479, $480), ($481, $482, $483, $484, $485), ($486, $487, $488, $489, $490), ($491, $492, $493, $494, $495), ($496, $497, $498, $499, $500), ($501, $502, $503, $504, $505), ($506, $507, $508, $509, $510), ($511, $512, $513, $514, $515), ($516, $517, $518, $519, $520), ($521, $522, $523, $524, $525), ($526, $527, $528, $529, $530), ($531, $532, $533, $534, $535), ($536, $537, $538, $539, $540), ($541, $542, $543, $544, $545), ($546, $547, $548, $549, $550), ($551, $552, $553, $554, $555), ($556, $557, $558, $559, $560), ($561, $562, $563, $564, $565), ($566, $567, $568, $569, $570), ($571, $572, $573, $574, $575), ($576, $577, $578, $579, $580), ($581, $582, $583, $584, $585), ($586, $587, $588, $589, $590), ($591, $592, $593, $594, $595), ($596, $597, $598, $599, $600), ($601, $602, $603, $604, $605), ($606, $607, $608, $609, $610), ($611, $612, $613, $614, $615), ($616, $617, $618, $619, $620), ($621, $622, $623, $624, $625), ($626, $627, $628, $629, $630), ($631, $632, $633, $634, $635), ($636, $637, $638, $639, $640), ($641, $642, $643, $644, $645), ($646, $647, $648, $649, $650), ($651, $652, $653, $654, $655), ($656, $657, $658, $659, $660), ($661, $662, $663, $664, $665), ($666, $667, $668, $669, $670), ($671, $672, $673, $674, $675), ($676, $677, $678, $679, $680), ($681, $682, $683, $684, $685), ($686, $687, $688, $689, $690), ($691, $692, $693, $694, $695), ($696, $697, $698, $699, $700)
+2018-12-04 15:12:51.682 MST [50710] ERROR:  relation "items" does not exist at character 22
+2018-12-04 15:12:51.682 MST [50710] STATEMENT:  SELECT COUNT(*) FROM items;
+2018-12-04 15:13:01.604 MST [50718] ERROR:  null value in column "red" violates not-null constraint
+2018-12-04 15:13:01.604 MST [50718] DETAIL:  Failing row contains (2, twitch, lb, 9.5, null, null, null, 15, press).
+2018-12-04 15:13:01.604 MST [50718] STATEMENT:  insert into "item" ("category_id", "name", "source", "unit", "unit_price") values ($1, $2, $3, $4, $5), ($6, $7, $8, $9, $10), ($11, $12, $13, $14, $15), ($16, $17, $18, $19, $20), ($21, $22, $23, $24, $25), ($26, $27, $28, $29, $30), ($31, $32, $33, $34, $35), ($36, $37, $38, $39, $40), ($41, $42, $43, $44, $45), ($46, $47, $48, $49, $50), ($51, $52, $53, $54, $55), ($56, $57, $58, $59, $60), ($61, $62, $63, $64, $65), ($66, $67, $68, $69, $70), ($71, $72, $73, $74, $75), ($76, $77, $78, $79, $80), ($81, $82, $83, $84, $85), ($86, $87, $88, $89, $90), ($91, $92, $93, $94, $95), ($96, $97, $98, $99, $100), ($101, $102, $103, $104, $105), ($106, $107, $108, $109, $110), ($111, $112, $113, $114, $115), ($116, $117, $118, $119, $120), ($121, $122, $123, $124, $125), ($126, $127, $128, $129, $130), ($131, $132, $133, $134, $135), ($136, $137, $138, $139, $140), ($141, $142, $143, $144, $145), ($146, $147, $148, $149, $150), ($151, $152, $153, $154, $155), ($156, $157, $158, $159, $160), ($161, $162, $163, $164, $165), ($166, $167, $168, $169, $170), ($171, $172, $173, $174, $175), ($176, $177, $178, $179, $180), ($181, $182, $183, $184, $185), ($186, $187, $188, $189, $190), ($191, $192, $193, $194, $195), ($196, $197, $198, $199, $200), ($201, $202, $203, $204, $205), ($206, $207, $208, $209, $210), ($211, $212, $213, $214, $215), ($216, $217, $218, $219, $220), ($221, $222, $223, $224, $225), ($226, $227, $228, $229, $230), ($231, $232, $233, $234, $235), ($236, $237, $238, $239, $240), ($241, $242, $243, $244, $245), ($246, $247, $248, $249, $250), ($251, $252, $253, $254, $255), ($256, $257, $258, $259, $260), ($261, $262, $263, $264, $265), ($266, $267, $268, $269, $270), ($271, $272, $273, $274, $275), ($276, $277, $278, $279, $280), ($281, $282, $283, $284, $285), ($286, $287, $288, $289, $290), ($291, $292, $293, $294, $295), ($296, $297, $298, $299, $300), ($301, $302, $303, $304, $305), ($306, $307, $308, $309, $310), ($311, $312, $313, $314, $315), ($316, $317, $318, $319, $320), ($321, $322, $323, $324, $325), ($326, $327, $328, $329, $330), ($331, $332, $333, $334, $335), ($336, $337, $338, $339, $340), ($341, $342, $343, $344, $345), ($346, $347, $348, $349, $350), ($351, $352, $353, $354, $355), ($356, $357, $358, $359, $360), ($361, $362, $363, $364, $365), ($366, $367, $368, $369, $370), ($371, $372, $373, $374, $375), ($376, $377, $378, $379, $380), ($381, $382, $383, $384, $385), ($386, $387, $388, $389, $390), ($391, $392, $393, $394, $395), ($396, $397, $398, $399, $400), ($401, $402, $403, $404, $405), ($406, $407, $408, $409, $410), ($411, $412, $413, $414, $415), ($416, $417, $418, $419, $420), ($421, $422, $423, $424, $425), ($426, $427, $428, $429, $430), ($431, $432, $433, $434, $435), ($436, $437, $438, $439, $440), ($441, $442, $443, $444, $445), ($446, $447, $448, $449, $450), ($451, $452, $453, $454, $455), ($456, $457, $458, $459, $460), ($461, $462, $463, $464, $465), ($466, $467, $468, $469, $470), ($471, $472, $473, $474, $475), ($476, $477, $478, $479, $480), ($481, $482, $483, $484, $485), ($486, $487, $488, $489, $490), ($491, $492, $493, $494, $495), ($496, $497, $498, $499, $500), ($501, $502, $503, $504, $505), ($506, $507, $508, $509, $510), ($511, $512, $513, $514, $515), ($516, $517, $518, $519, $520), ($521, $522, $523, $524, $525), ($526, $527, $528, $529, $530), ($531, $532, $533, $534, $535), ($536, $537, $538, $539, $540), ($541, $542, $543, $544, $545), ($546, $547, $548, $549, $550), ($551, $552, $553, $554, $555), ($556, $557, $558, $559, $560), ($561, $562, $563, $564, $565), ($566, $567, $568, $569, $570), ($571, $572, $573, $574, $575), ($576, $577, $578, $579, $580), ($581, $582, $583, $584, $585), ($586, $587, $588, $589, $590), ($591, $592, $593, $594, $595), ($596, $597, $598, $599, $600), ($601, $602, $603, $604, $605), ($606, $607, $608, $609, $610), ($611, $612, $613, $614, $615), ($616, $617, $618, $619, $620), ($621, $622, $623, $624, $625), ($626, $627, $628, $629, $630), ($631, $632, $633, $634, $635), ($636, $637, $638, $639, $640), ($641, $642, $643, $644, $645), ($646, $647, $648, $649, $650), ($651, $652, $653, $654, $655), ($656, $657, $658, $659, $660), ($661, $662, $663, $664, $665), ($666, $667, $668, $669, $670), ($671, $672, $673, $674, $675), ($676, $677, $678, $679, $680), ($681, $682, $683, $684, $685), ($686, $687, $688, $689, $690), ($691, $692, $693, $694, $695)
+2018-12-04 15:13:52.191 MST [50737] ERROR:  table "item_locations" does not exist
+2018-12-04 15:13:52.191 MST [50737] STATEMENT:  DROP TABLE item_locations;
+2018-12-04 15:14:03.428 MST [50747] ERROR:  relation "inventory" already exists
+2018-12-04 15:14:03.428 MST [50747] STATEMENT:  CREATE TABLE inventory (
+	  id serial PRIMARY KEY,
+	  start_date TIMESTAMP NOT NULL,
+	  end_date TIMESTAMP NOT NULL
+	);
+2018-12-04 15:14:03.434 MST [50747] ERROR:  relation "category" already exists
+2018-12-04 15:14:03.434 MST [50747] STATEMENT:  CREATE TABLE category (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL
+	);
+2018-12-04 15:14:03.442 MST [50747] ERROR:  relation "location" already exists
+2018-12-04 15:14:03.442 MST [50747] STATEMENT:  CREATE TABLE location (
+	  id serial PRIMARY KEY,
+	  name VARCHAR UNIQUE NOT NULL
+	);
+2018-12-04 15:14:03.494 MST [50747] ERROR:  relation "count" already exists
+2018-12-04 15:14:03.494 MST [50747] STATEMENT:  CREATE TABLE count (
+	  id serial PRIMARY KEY,
+	  quantity FLOAT NOT NULL, 
+	  type VARCHAR NOT NULL,
+	  inventory_id int REFERENCES inventory (id) ON DELETE CASCADE NOT NULL
+	);
+2018-12-04 15:14:15.456 MST [50760] ERROR:  null value in column "red" violates not-null constraint
+2018-12-04 15:14:15.456 MST [50760] DETAIL:  Failing row contains (1, twitch, lb, 9.5, null, null, null, 15, press).
+2018-12-04 15:14:15.456 MST [50760] STATEMENT:  insert into "item" ("category_id", "name", "source", "unit", "unit_price") values ($1, $2, $3, $4, $5), ($6, $7, $8, $9, $10), ($11, $12, $13, $14, $15), ($16, $17, $18, $19, $20), ($21, $22, $23, $24, $25), ($26, $27, $28, $29, $30), ($31, $32, $33, $34, $35), ($36, $37, $38, $39, $40), ($41, $42, $43, $44, $45), ($46, $47, $48, $49, $50), ($51, $52, $53, $54, $55), ($56, $57, $58, $59, $60), ($61, $62, $63, $64, $65), ($66, $67, $68, $69, $70), ($71, $72, $73, $74, $75), ($76, $77, $78, $79, $80), ($81, $82, $83, $84, $85), ($86, $87, $88, $89, $90), ($91, $92, $93, $94, $95), ($96, $97, $98, $99, $100), ($101, $102, $103, $104, $105), ($106, $107, $108, $109, $110), ($111, $112, $113, $114, $115), ($116, $117, $118, $119, $120), ($121, $122, $123, $124, $125), ($126, $127, $128, $129, $130), ($131, $132, $133, $134, $135), ($136, $137, $138, $139, $140), ($141, $142, $143, $144, $145), ($146, $147, $148, $149, $150), ($151, $152, $153, $154, $155), ($156, $157, $158, $159, $160), ($161, $162, $163, $164, $165), ($166, $167, $168, $169, $170), ($171, $172, $173, $174, $175), ($176, $177, $178, $179, $180), ($181, $182, $183, $184, $185), ($186, $187, $188, $189, $190), ($191, $192, $193, $194, $195), ($196, $197, $198, $199, $200), ($201, $202, $203, $204, $205), ($206, $207, $208, $209, $210), ($211, $212, $213, $214, $215), ($216, $217, $218, $219, $220), ($221, $222, $223, $224, $225), ($226, $227, $228, $229, $230), ($231, $232, $233, $234, $235), ($236, $237, $238, $239, $240), ($241, $242, $243, $244, $245), ($246, $247, $248, $249, $250), ($251, $252, $253, $254, $255), ($256, $257, $258, $259, $260), ($261, $262, $263, $264, $265), ($266, $267, $268, $269, $270), ($271, $272, $273, $274, $275), ($276, $277, $278, $279, $280), ($281, $282, $283, $284, $285), ($286, $287, $288, $289, $290), ($291, $292, $293, $294, $295), ($296, $297, $298, $299, $300), ($301, $302, $303, $304, $305), ($306, $307, $308, $309, $310), ($311, $312, $313, $314, $315), ($316, $317, $318, $319, $320), ($321, $322, $323, $324, $325), ($326, $327, $328, $329, $330), ($331, $332, $333, $334, $335), ($336, $337, $338, $339, $340), ($341, $342, $343, $344, $345), ($346, $347, $348, $349, $350), ($351, $352, $353, $354, $355), ($356, $357, $358, $359, $360), ($361, $362, $363, $364, $365), ($366, $367, $368, $369, $370), ($371, $372, $373, $374, $375), ($376, $377, $378, $379, $380), ($381, $382, $383, $384, $385), ($386, $387, $388, $389, $390), ($391, $392, $393, $394, $395), ($396, $397, $398, $399, $400), ($401, $402, $403, $404, $405), ($406, $407, $408, $409, $410), ($411, $412, $413, $414, $415), ($416, $417, $418, $419, $420), ($421, $422, $423, $424, $425), ($426, $427, $428, $429, $430), ($431, $432, $433, $434, $435), ($436, $437, $438, $439, $440), ($441, $442, $443, $444, $445), ($446, $447, $448, $449, $450), ($451, $452, $453, $454, $455), ($456, $457, $458, $459, $460), ($461, $462, $463, $464, $465), ($466, $467, $468, $469, $470), ($471, $472, $473, $474, $475), ($476, $477, $478, $479, $480), ($481, $482, $483, $484, $485), ($486, $487, $488, $489, $490), ($491, $492, $493, $494, $495), ($496, $497, $498, $499, $500), ($501, $502, $503, $504, $505), ($506, $507, $508, $509, $510), ($511, $512, $513, $514, $515), ($516, $517, $518, $519, $520), ($521, $522, $523, $524, $525), ($526, $527, $528, $529, $530), ($531, $532, $533, $534, $535), ($536, $537, $538, $539, $540), ($541, $542, $543, $544, $545), ($546, $547, $548, $549, $550), ($551, $552, $553, $554, $555), ($556, $557, $558, $559, $560), ($561, $562, $563, $564, $565), ($566, $567, $568, $569, $570), ($571, $572, $573, $574, $575), ($576, $577, $578, $579, $580), ($581, $582, $583, $584, $585), ($586, $587, $588, $589, $590), ($591, $592, $593, $594, $595), ($596, $597, $598, $599, $600), ($601, $602, $603, $604, $605), ($606, $607, $608, $609, $610), ($611, $612, $613, $614, $615), ($616, $617, $618, $619, $620), ($621, $622, $623, $624, $625), ($626, $627, $628, $629, $630), ($631, $632, $633, $634, $635), ($636, $637, $638, $639, $640), ($641, $642, $643, $644, $645), ($646, $647, $648, $649, $650), ($651, $652, $653, $654, $655), ($656, $657, $658, $659, $660), ($661, $662, $663, $664, $665), ($666, $667, $668, $669, $670), ($671, $672, $673, $674, $675), ($676, $677, $678, $679, $680), ($681, $682, $683, $684, $685), ($686, $687, $688, $689, $690), ($691, $692, $693, $694, $695)
